@@ -108,7 +108,7 @@ last)</li>
 exists and is flipped</li>
 </ul>
 </details>
-<!-- <details> -->
+<details>
 <summary><b>2. Variations: Repeated vs. Non-Repeated</b>
 </summary><p><strong>Not-Flipped Repeated Task</strong></p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
@@ -128,8 +128,8 @@ exists and is flipped</li>
 <span>  .outcomes <span class="op">=</span> <span class="va">outcomes</span>,</span>
 <span>  .repeated <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
-<!-- </details> -->
-<!-- <details> -->
+</details>
+<details>
 <summary><b>3. The <code>.fill</code> Argument: Should You Use It?</b>
 </summary><p>Use <code>.fill = TRUE</code> to “fill” missing values based on IRR
 agreement.</p>
@@ -184,8 +184,8 @@ agreement.</p>
 (helps increase power).<br>
 - Use <code>.fill = FALSE</code> (default) when in doubt for safer
 estimates.</p>
-<!-- </details> -->
-<!-- <details> -->
+</details>
+<details>
 <summary><b>4. What If Your Data Is Already Clean?</b>
 </summary><p>If you already have a clean dataset, use
 <code><a href="../reference/make_projoint_data.html">make_projoint_data()</a></code>:</p>
@@ -211,8 +211,8 @@ estimates.</p>
 <pre><code><span><span class="co">## &lt;projoint_data&gt;</span></span>
 <span><span class="co">## - data:     6400 rows, 13 columns</span></span>
 <span><span class="co">## - labels:   24 levels, 4 columns</span></span></code></pre>
-<!-- </details> -->
-<!-- <details> -->
+</details>
+<details>
 <summary><b>5. Arranging Attribute and Level Labels</b>
 </summary><p>To reorder or relabel attributes:</p>
 <ol style="list-style-type: decimal">
@@ -237,7 +237,7 @@ estimates.</p>
 <code class="sourceCode R"><span><span class="va">mm</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/projoint.html">projoint</a></span><span class="op">(</span><span class="va">out1_arranged</span>, .structure <span class="op">=</span> <span class="st">"profile_level"</span>, .estimand <span class="op">=</span> <span class="st">"mm"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">mm</span><span class="op">)</span></span></code></pre></div>
 <p><img src="wrangle_files/figure-html/unnamed-chunk-11-1.png" width="2100" style="display: block; margin: auto;"></p>
-<!-- </details> -->
+</details>
 <hr>
 </div>
 </div>
