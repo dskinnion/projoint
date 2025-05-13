@@ -98,42 +98,33 @@
         <li>When you are done fielding your survey, you will now need to export your data from Qualtrics to R. Follow the directions in the next section.</li>
     </ul>
 </details>
-<details style="margin-left: 25px; margin-bottom: -10px"><summary style="font-size: 18px;">
-<b>4. Read</b> the results into R and <b>wrangle</b> your data into structured form
-</summary><ul>
-<li>Load your <strong>survey responses</strong> into R:</li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://yhoriuchi.github.io/projoint/">projoint</a></span><span class="op">)</span></span>
-<span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_Qualtrics.html">read_Qualtrics</a></span><span class="op">(</span><span class="st">"your_file.csv"</span><span class="op">)</span></span></code></pre></div>
-<ul>
-<li>Follow the <a href="articles/read.html">step-by-step guide</a> to learn how to read survey data from Qualtrics for conjoint analysis.</li>
-</ul></details>
-<details style="margin-left: 25px; margin-bottom: -10px"><summary style="font-size: 18px;">
-<b>4. Wrangle</b> the data into structured form
-</summary><ul>
-<li>Prepare the data for analysis:</li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/reshape_projoint.html">reshape_projoint</a></span><span class="op">(</span></span>
-<span>  .dataframe <span class="op">=</span> <span class="va">dat</span>,</span>
-<span>  .outcomes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"choice"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">8</span><span class="op">)</span>, <span class="st">"choice1_repeated_flipped"</span><span class="op">)</span></span>
-<span><span class="op">)</span></span></code></pre></div>
-<ul>
-<li>Follow the <a href="https://yhoriuchi.github.io/projoint/articles/wrangle.html">step-by-step guide</a> to learn how to read and reshape data for conjoint analysis.</li>
-</ul></details>
-<details style="margin-left: 25px; margin-bottom: -10px"><summary style="font-size: 18px;">
-<b>5. Analyze</b> with automatic measurement error correction
-</summary><ul>
-<li>Estimate Marginal Means (MMs) or Average Marginal Component Effects (AMCEs) with correction for measurement error:</li>
-</ul>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/projoint.html">projoint</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span></span></code></pre></div>
-<ul>
-<li>Follow the <a href="https://yhoriuchi.github.io/projoint/articles/analyze.html">step-by-step guide</a> to learn how to estimate and correct marginal means (MMs) or average marginal component effects (AMCEs), including predicting IRR if necessary.</li>
-</ul></details>
+<details style="margin-left: 25px; margin-bottom: -10px">
+    <summary style="font-size: 18px;">
+        <b>4. Read</b> the results into R and <b>wrangle</b> your data into structured form
+    </summary>
+    <ul>
+        <li>Load your <strong>survey responses</strong> into R:</li>
+    </ul>
+    <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+        <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://yhoriuchi.github.io/projoint/">projoint</a></span><span class="op">)</span></span>
+            <span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_Qualtrics.html">read_Qualtrics</a></span><span class="op">(</span><span class="st">"your_file.csv"</span><span class="op">)</span></span></code></pre>
+    </div>
+    <ul>
+        <li>Follow the <a href="articles/read.html">step-by-step guide</a> to learn how to read survey data from Qualtrics for conjoint analysis.</li>
+    </ul>
+    <ul>
+        <li>Prepare the data for analysis:</li>
+    </ul>
+    <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+        <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/reshape_projoint.html">reshape_projoint</a></span><span class="op">(</span></span>
+            <span>  .dataframe <span class="op">=</span> <span class="va">dat</span>,</span>
+            <span>  .outcomes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"choice"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">8</span><span class="op">)</span>, <span class="st">"choice1_repeated_flipped"</span><span class="op">)</span></span>
+            <span><span class="op">)</span></span></code></pre>
+    </div>
+    <ul>
+        <li>Follow the <a href="https://yhoriuchi.github.io/projoint/articles/wrangle.html">step-by-step guide</a> to learn how to read and reshape data for conjoint analysis.</li>
+    </ul>
+</details>
 <details style="margin-left: 25px; margin-bottom: -10px"><summary style="font-size: 18px;">
 <b>6. Visualize</b> your results
 </summary><ul>
