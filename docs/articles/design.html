@@ -79,16 +79,22 @@ reliability (IRR) estimation</li>
 <li>🚀 <span style="color:DarkOrange"><b>Export your survey directly for
 Qualtrics (in QDF format)</b></span> ✅</li>
 </ul>
-<details>
-    <summary>How to Use the Projoint Survey Design Tool</summary>
+    <h3>How to Use the Projoint Survey Design Tool</h3>
     <p>The following instructions are taken directly from the Projoint Survey Design Tool's <a href="https://projoint.aaronrkaufman.com/tutorials/00_tutorial.md">Tutorial section</a>.</p>
-    <h3 id="setting-the-attributes">1. Setting the Attributes<a class="anchor" aria-label="anchor" href="#setting-the-attributes"></a></h3>
-        <p>The most important part of a discrete choice experiment is setting the attributes and levels: these are the features that are getting randomized. Add attributes by clicking on the "Add Attribute" button, and add levels by clicking on the "Add Level" button.</p>
+<details>
+    <summary>
+        <h3 id="setting-the-attributes">1. Setting the Attributes<a class="anchor" aria-label="anchor" href="#setting-the-attributes"></a></h3>
+    </summary>
+    <p>The most important part of a discrete choice experiment is setting the attributes and levels: these are the features that are getting randomized. Add attributes by clicking on the "Add Attribute" button, and add levels by clicking on the "Add Level" button.</p>
         <p>There are two advanced options on the page where users add attributes and levels. The first controls the order in which attributes appear to respondents. By clicking on the padlock icon to the right of each attribute, the user can control where they appear. A locked icon will always appear in the indicated position, so if the second attribute is locked, that attribute will always appear second in the list of attributes shown to respondents.</p>
         <p>The second advanced option controls randomization weights, and can be accesed by clicking on the "Edit Weights" button. This allows researchers to set how frequently each level should appear. Most choice experiments set each level to equal frequency, but this is not necessarily preferred.</p>
         <p>After you have set the attributes and levels, we recommend going to the Preview screen to preview your study. This produces a single task, which can be refreshed, so the researcher can see what the respondents will see.</p>
-    <h3 id="additional-settings">2. Additional Settings<a class="anchor" aria-label="anchor" href="#additional-settings"></a></h3>
-        <ul>
+</details>
+<details>
+    <summary>
+        <h3 id="additional-settings">2. Additional Settings<a class="anchor" aria-label="anchor" href="#additional-settings"></a></h3>
+    </summary>
+    <ul>
             <li><b>Number of profiles</b>: This defaults to 2, a binary comparison, but can be any positive integer. We recommend no more than 5.</li>
             <li><b>Number of tasks</b>: This is the number of distinct comparison tasks the respondent sees. More tasks produces more data, but also potentially fatigues the respondent.</li>
             <li><b>Repeated task</b>: This toggles whether one of the tasks respondents see is an exact duplicate of a previous task. By comparing the rate at which respondents give the same answer to identical questions, it is possible to measure and correct for a certain type of measurement error in conjoint studies. We strongly recommend turning this on.</li>
@@ -96,11 +102,19 @@ Qualtrics (in QDF format)</b></span> ✅</li>
             <li><b>Which task to repeat?</b>: Which of the tasks should be repeated? This can range from 1 to N where N is the number of tasks.</li>
             <li><b>Where to repeat?</b>: Where should the repeated task go? This can range from K where K is the index of the task to be repeated to N+1 where N is the number of tasks.</li>
             <li><b>Ordering of attributes</b>: How should the order of attributes be randomized? The three options are Non random, Participant randomized, and Task randomized. Non-random says that every respondent and every task will have the same attribute order: the one specified by you. Participant-randomized says that each participant sees a different attribute order, but that attribute order is the same for all of that participant's tasks. In other words, each participant sees one ordering of attributes. Task-randomized says that every task has an independently-randomized attribute order. We recommend Participant-randomized as it is less confusing for participants.</li>
-        </ul>
-    <h3 id="restrictions">3. Restrictions<a class="anchor" aria-label="anchor" href="#restrictions"></a></h3>
+    </ul>
+</details>  
+<details>
+    <summary>
+        <h3 id="restrictions">3. Restrictions<a class="anchor" aria-label="anchor" href="#restrictions"></a></h3>
+    </summary>
         <p>There are two types of restrictions we discuss: cross-attribute restrictions and cross-profile restrictions. Cross-attribute restrictions prevent a profile from being logically inconsistent. For example, in a conjoint study comparing potential immigrants, if an immigrant has only a middle school education, their career cannot be neurosurgeon. Cross-profile restrictions produce dependencies across the different profiles of one task. For example, in a conjoint study comparing political candidates in a two-party, if one candidate is polling at 60%, the other must be polling at 40% or less.</p>
-    <h3 id="exporting">4. Exporting<a class="anchor" aria-label="anchor" href="#exporting"></a></h3>
-        <p>There are four options for exporting a survey, and we recommend users do at least three of them:</p>
+</details>
+<details>
+    <summary>
+        <h3 id="exporting">4. Exporting<a class="anchor" aria-label="anchor" href="#exporting"></a></h3>
+    </summary>
+    <p>There are four options for exporting a survey, and we recommend users do at least three of them:</p>
         <ol>
             <li>Exporting to CSV produces a user-specified number of test data indicating the attributes and levels of a number of random tasks. We recommend using this to double-check that all restrictions and randomization weights were successfully applied, as well as to conduct a power analysis.</li>
             <li>Exporting to JSON produces a file containing all the information the user set defining the survey. We recommend saving this so that you can recreate the survey settings if you clear your cookies. This JSON file can be imported to this web tool, automating this process.</li>
@@ -108,6 +122,7 @@ Qualtrics (in QDF format)</b></span> ✅</li>
             <li>Exporting to Qualtrics produces a .QSF file that can be loaded into Qualtrics, automatically populating a survey with appropriate randomization and the correct question tasks.</li>
         </ol>
 </details>
+
 </div>
 <hr>
 <div class="section level2">
