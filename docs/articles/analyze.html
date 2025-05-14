@@ -55,7 +55,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>Analyze Your Conjoint Data</h1>
+      <h1>Analyze and Visualize Important QOIs</h1>
             
       
 
@@ -236,6 +236,50 @@ respondent behavior.</p>
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">predicted_irr</span><span class="op">)</span></span></code></pre></div>
 <p><img src="analyze_files/figure-html/unnamed-chunk-11-1.png" width="700"></p>
 </details><hr>
+</div>
+
+<div class="section level2">
+<h2 id="visualize-mms-or-amces">🎨 Visualize MMs or AMCEs<a class="anchor" aria-label="anchor" href="#visualize-mms-or-amces"></a>
+</h2>
+<p>The <strong>projoint</strong> package provides ready-to-publish
+plotting tools for conjoint analysis results.</p>
+<hr>
+<div class="section level3">
+<h3 id="choice-level-analysis">⚖️ Choice-Level Analysis<a class="anchor" aria-label="anchor" href="#choice-level-analysis"></a>
+</h3>
+<details><summary><b>Estimate</b>
+</summary><ul>
+<li>Specify your quantity of interest:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">qoi_mm</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/set_qoi.html">set_qoi</a></span><span class="op">(</span></span>
+<span>  .structure <span class="op">=</span> <span class="st">"choice_level"</span>, <span class="co"># default</span></span>
+<span>  .att_choose <span class="op">=</span> <span class="st">"att1"</span>, </span>
+<span>  .lev_choose <span class="op">=</span> <span class="st">"level1"</span>, </span>
+<span>  .att_notchoose <span class="op">=</span> <span class="st">"att1"</span>, </span>
+<span>  .lev_notchoose <span class="op">=</span> <span class="st">"level3"</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>Estimate</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">choice_mm</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/projoint.html">projoint</a></span><span class="op">(</span></span>
+<span>  .data <span class="op">=</span> <span class="va">out1_arranged</span>, </span>
+<span>  .qoi <span class="op">=</span> <span class="va">qoi_mm</span>, </span>
+<span>  .ignore_position <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
+</details><details><summary><b>Visualize (Levels) </b>
+</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">choice_mm</span><span class="op">)</span></span></code></pre></div>
+<img src="visualize_files/figure-html/unnamed-chunk-4-1.png" width="1800" style="display: block; margin: auto;"></details><details><summary><b>Visualize (Differences)</b>
+</summary><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">choice_mm</span>, .type <span class="op">=</span> <span class="st">"pointrange"</span><span class="op">)</span></span></code></pre></div>
+<img src="visualize_files/figure-html/unnamed-chunk-5-1.png" width="2400" style="display: block; margin: auto;"></details><p><span style="color:DarkRed"><b>Note:</b></span> The current version
+of <strong>projoint</strong> supports plotting choice-level MMs
+only.<br>
+Support for <strong>choice-level AMCEs</strong> will be available in
+future updates!</p>
+</div>
 </div>
 
 <div class="section level2">
