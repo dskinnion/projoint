@@ -54,14 +54,14 @@
 </p>
 <hr>
 <p>Conjoint survey designs are spreading across the social sciences due to their unusual capacity to estimate many causal effects from a single randomized experiment. Unfortunately, by their ability to mirror complicated real-world choices, these designs often generate substantial <strong>measurement error</strong> and thus <strong>bias</strong>.</p>
-<p><strong>projoint</strong> is a general-purpose R package for conjoint analysis. It produces <strong>more reliable estimates</strong> of the quantities of interest based on questions explicitly about survey respondents’ <strong>choices between two options</strong>.<sup><a href="faq/index.html#history" style="text-decoration: none;">&#9432;</a></sup></p>
+<p><strong>projoint</strong> is a general-purpose R package for conjoint analysis. It produces <strong>more reliable estimates</strong> of the quantities of interest based on questions explicitly about survey respondents’ <strong>choices between two options</strong>.<sup><a href="faq/index.html#history" target="_blank" style="text-decoration: none;">&#9432;</a></sup></p>
 <p>This method can be used not only by researchers at the design stage but also by those already analyzing the data. As we explain, everything necessary to correct the bias in an application can be estimated via a slight modification of the standard conjoint design, a separate survey run afterward, or sometimes without new data collection at all.</p>
 <details>
-    <summary>Read our <a href="https://gking.harvard.edu/conjointE" class="external-link">accompanying paper</a> to learn more about our method</summary>
+    <summary>Read our <a href="https://gking.harvard.edu/conjointE" target="_blank" class="external-link">accompanying paper</a> to learn more about our method</summary>
 <ul>
 <li>
 <strong>Clayton, Horiuchi, Kaufman, King, Komisarchik (Forthcoming).</strong><br>
-“Correcting Measurement Error Bias in Conjoint Survey Experiments.”<br><em>Forthcoming, American Journal of Political Science.</em><br><a href="https://gking.harvard.edu/conjointE" class="external-link">Pre-Print Available</a>
+“Correcting Measurement Error Bias in Conjoint Survey Experiments.”<br><em>Forthcoming, American Journal of Political Science.</em><br><a href="https://gking.harvard.edu/conjointE" target="_blank" class="external-link">Pre-Print Available</a>
 </li>
 <li><a href="doc/projoint_citation.bib">👉 Download BibTeX Reference</a></li>
 </ul>
@@ -76,16 +76,16 @@
 </summary>
 <p>Open R (or <a href="https://www.r-project.org/" target="_blank">install R</a> if you do not have it), and run the following command in your coding environment.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"yhoriuchi/projoint"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" target="_blank" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"yhoriuchi/projoint"</span><span class="op">)</span></span></code></pre></div>
 </details>
 <details style="margin-left: 25px; margin-bottom: -10px">
     <summary style="font-size: 18px;">
         <b>2. Design</b> your survey
     </summary>
-    <p>Online surveys are frequently written with an online software called Qualtrics. Using our web tool, called the <a href="https://projoint.aaronrkaufman.com/" class="external-link">Projoint Survey Designer</a>, you don't need to learn how to write a survey in Qualtrics.</p>
+    <p>Online surveys are frequently written with an online software called Qualtrics. Using our web tool, called the <a href="https://projoint.aaronrkaufman.com/" target="_blank" class="external-link">Projoint Survey Designer</a>, you don't need to learn how to write a survey in Qualtrics.</p>
     <ul>
-        <li>Use the <a href="https://projoint.aaronrkaufman.com/" class="external-link">Projoint Survey Designer</a> and export surveys formatted for Qualtrics.</li>
-        <li>Follow the <a href="articles/design.html">step-by-step guide</a> to learn how to set up your Qualtrics survey.</li>
+        <li>Use the <a href="https://projoint.aaronrkaufman.com/" target="_blank" class="external-link">Projoint Survey Designer</a> and export surveys formatted for Qualtrics.</li>
+        <li>Follow the <a href="articles/design.html" target="_blank">step-by-step guide</a> to learn how to set up your Qualtrics survey.</li>
     </ul>
 </details>
 </details>
@@ -112,20 +112,20 @@
         <li>Load your <strong>survey responses</strong> into R:</li>
     </ul>
     <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-        <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://yhoriuchi.github.io/projoint/">projoint</a></span><span class="op">)</span></span>
-            <span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_Qualtrics.html">read_Qualtrics</a></span><span class="op">(</span><span class="st">"your_file.csv"</span><span class="op">)</span></span></code></pre>
+        <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" target="_blank" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://yhoriuchi.github.io/projoint/" target="_blank">projoint</a></span><span class="op">)</span></span>
+            <span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_Qualtrics.html" target="_blank">read_Qualtrics</a></span><span class="op">(</span><span class="st">"your_file.csv"</span><span class="op">)</span></span></code></pre>
     </div>
     <ul>
         <li>Prepare the data for analysis:</li>
     </ul>
     <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-        <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/reshape_projoint.html">reshape_projoint</a></span><span class="op">(</span></span>
+        <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/reshape_projoint.html" target="_blank">reshape_projoint</a></span><span class="op">(</span></span>
             <span>  .dataframe <span class="op">=</span> <span class="va">dat</span>,</span>
-            <span>  .outcomes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"choice"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">8</span><span class="op">)</span>, <span class="st">"choice1_repeated_flipped"</span><span class="op">)</span></span>
+            <span>  .outcomes <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" target="_blank" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" target="_blank" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"choice"</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">8</span><span class="op">)</span>, <span class="st">"choice1_repeated_flipped"</span><span class="op">)</span></span>
             <span><span class="op">)</span></span></code></pre>
     </div>
     <ul>
-        <li>Follow the <a href="articles/read.html">step-by-step guide</a> to learn how to read and reshape data for conjoint analysis.</li>
+        <li>Follow the <a href="articles/read.html" target="_blank">step-by-step guide</a> to learn how to read and reshape data for conjoint analysis.</li>
     </ul>
 </details>
 <details style="margin-left: 25px; margin-bottom: -10px">
@@ -136,11 +136,11 @@
         <li>Estimate Marginal Means (MMs) or Average Marginal Component Effects (AMCEs) with correction for measurement error:</li>
     </ul>
     <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-        <code class="sourceCode R"><span><span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/projoint.html">projoint</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
-            <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span></span>
-            <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span></span></code></pre></div>
+        <code class="sourceCode R"><span><span class="va">output</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/projoint.html" target="_blank">projoint</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span>
+            <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" target="_blank" class="external-link">print</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span></span>
+            <span><span class="fu"><a href="https://rdrr.io/r/base/summary.html" target="_blank" class="external-link">summary</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span></span></code></pre></div>
     <ul>
-        <li>Follow the <a href="https://yhoriuchi.github.io/projoint/articles/analyze.html">step-by-step guide</a> to learn how to estimate and correct marginal means (MMs) or average marginal component effects (AMCEs), including predicting IRR if necessary.</li>
+        <li>Follow the <a href="articles/analyze.html" target="_blank">step-by-step guide</a> to learn how to estimate and correct marginal means (MMs) or average marginal component effects (AMCEs), including predicting IRR if necessary.</li>
     </ul>
 </details>
 <details style="margin-left: 25px; margin-bottom: -10px"><summary style="font-size: 18px;">
@@ -149,15 +149,15 @@
 <li>Visualize your results easily:</li>
 </ul>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" target="_blank" class="external-link">plot</a></span><span class="op">(</span><span class="va">output</span><span class="op">)</span></span></code></pre></div>
 <ul>
-<li>Follow the <a href="https://yhoriuchi.github.io/projoint/articles/visualize.html">step-by-step guide</a> to learn how to visualize the marginal means (MMs) or average marginal component effects (AMCEs).</li>
+<li>Follow the <a href="articles/visualize.html" target="_blank">step-by-step guide</a> to learn how to visualize the marginal means (MMs) or average marginal component effects (AMCEs).</li>
 </ul></details>
 <details style="margin-left: 25px; margin-bottom: -10px"><summary style="font-size: 18px;">
 <b>7. Explore</b> and compare further
 </summary><ul>
 <li>Estimate additional quantities of interest and explore subgroup comparisons using choice-level analysis.</li>
-<li>Follow the <a href="https://yhoriuchi.github.io/projoint/articles/explore.html">step-by-step guide</a> to learn how to estimate under-investigated quantities of interest and compare subgroups using choice-level analysis.</li>
+<li>Follow the <a href="articles/explore.html" target="_blank">step-by-step guide</a> to learn how to estimate under-investigated quantities of interest and compare subgroups using choice-level analysis.</li>
 </ul></details><hr>
 </div>
 <div class="section level2">
@@ -169,7 +169,7 @@
 </ul></details>
 <details style="margin-left: 25px; margin-bottom: 5px">
     <summary>Contact</summary>
-    <p>For comments and suggestions, please open an issue on the <a href="https://github.com/yhoriuchi/projoint/issues">Github repository</a>.</p>
+    <p>For comments and suggestions, please open an issue on the <a href="https://github.com/yhoriuchi/projoint/issues" target="_blank">Github repository</a>.</p>
 </details>
 <hr>
 <p align="center" style="font-size: 18px;">
@@ -181,7 +181,7 @@
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li>
-<a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a>
+<a href="https://opensource.org/licenses/mit-license.php" target="_blank" class="external-link">MIT</a> + file <a href="LICENSE-text.html" target="_blank">LICENSE</a>
 </li>
 </ul>
 </div>
@@ -190,7 +190,7 @@
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li><a href="authors.html#citation">Citing projoint</a></li>
+<li><a href="authors.html#citation" target="_blank">Citing projoint</a></li>
 </ul>
 </div>
 
@@ -204,7 +204,7 @@
 </div>
 
 <p align="center">
-<a href="https://github.com/yhoriuchi/projoint/actions/workflows/R-CMD-check.yaml" class="external-link"> <img src="https://github.com/yhoriuchi/projoint/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a> <a href="https://CRAN.R-project.org/package=projoint" class="external-link"> <img src="https://www.r-pkg.org/badges/version/projoint" alt="CRAN Status"></a> <a href="https://cran.r-project.org/package=projoint" class="external-link"> <img src="https://cranlogs.r-pkg.org/badges/grand-total/projoint" alt="Downloads"></a>
+<a href="https://github.com/yhoriuchi/projoint/actions/workflows/R-CMD-check.yaml" target="_blank" class="external-link"> <img src="https://github.com/yhoriuchi/projoint/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a> <a href="https://CRAN.R-project.org/package=projoint" target="_blank" class="external-link"> <img src="https://www.r-pkg.org/badges/version/projoint" alt="CRAN Status"></a> <a href="https://cran.r-project.org/package=projoint" target="_blank" class="external-link"> <img src="https://cranlogs.r-pkg.org/badges/grand-total/projoint" alt="Downloads"></a>
 </p>
 
 
@@ -217,7 +217,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" target="_blank" class="external-link">pkgdown</a> 2.1.1.</p>
 </div>
 
     </footer>
