@@ -35,10 +35,10 @@
           <h2 id="history">What is the history of conjoint analysis?</h2>
           <p>In market research...</p>
       </div>
-      <div><details><summary>
+      <div>
           <h2 id="profile-level">What if I have profile-level data?</h2>
-              </summary>
-          <p>We have tools available to help you with profile-level QOIs:</p>
+          <details><summary>
+          <p>We have tools available to help you with profile-level QOIs:</p> </summary>
           <details><summary><b>Profile-Level MMs (All Levels)</b>
 </summary><div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">mm0</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/projoint.html">projoint</a></span><span class="op">(</span><span class="va">out1</span>, .structure <span class="op">=</span> <span class="st">"profile_level"</span>, .estimand <span class="op">=</span> <span class="st">"mm"</span><span class="op">)</span></span>
@@ -250,6 +250,16 @@
 <span><span class="co">## <span style="color: #949494;"># ℹ 3 more variables: att_level_notchoose &lt;chr&gt;,</span></span></span>
 <span><span class="co">## <span style="color: #949494;">#   att_level_choose_baseline &lt;chr&gt;, att_level_notchoose_baseline &lt;chr&gt;</span></span></span></code></pre>
 </details><hr>
+          <div class="section level2"><details><summary>
+<h2 id="tip-when-to-use--by_var">💡 Tip: When to Use <code>.by_var</code><a class="anchor" aria-label="anchor" href="#tip-when-to-use--by_var"></a>
+</h2></summary>
+<p>Use <code>.by_var</code> <strong>only</strong> when comparing
+<strong>profile-level MMs</strong> between two groups (e.g., Democrats
+vs. Republicans).<br>
+For AMCEs or choice-level quantities, <code>.by_var</code> is not
+currently supported.</p>
+<hr></details>
+</div>
 <div class="section level3">
 <h3 id="profile-level-analysis">📈 Profile-Level Analysis<a class="anchor" aria-label="anchor" href="#profile-level-analysis"></a>
 </h3>
