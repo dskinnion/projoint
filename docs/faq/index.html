@@ -249,6 +249,26 @@
 <span><span class="co">## <span style="color: #949494;"># ℹ 3 more variables: att_level_notchoose &lt;chr&gt;,</span></span></span>
 <span><span class="co">## <span style="color: #949494;">#   att_level_choose_baseline &lt;chr&gt;, att_level_notchoose_baseline &lt;chr&gt;</span></span></span></code></pre>
 </details><hr>
+<div class="section level3">
+<h3 id="profile-level-analysis">📈 Profile-Level Analysis<a class="anchor" aria-label="anchor" href="#profile-level-analysis"></a>
+</h3>
+<details><summary><b>Estimate</b>
+</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">mm</span>   <span class="op">&lt;-</span> <span class="fu"><a href="../reference/projoint.html">projoint</a></span><span class="op">(</span><span class="va">out1_arranged</span>, .structure <span class="op">=</span> <span class="st">"profile_level"</span><span class="op">)</span> </span>
+<span><span class="va">amce</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/projoint.html">projoint</a></span><span class="op">(</span><span class="va">out1_arranged</span>, .structure <span class="op">=</span> <span class="st">"profile_level"</span>, .estimand <span class="op">=</span> <span class="st">"amce"</span><span class="op">)</span></span></code></pre></div>
+</details><details><summary><b>Visualize</b>
+</summary><ul>
+<li>Marginal Means</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">mm</span><span class="op">)</span></span></code></pre></div>
+<p><img src="visualize_files/figure-html/unnamed-chunk-7-1.png" width="1800" style="display: block; margin: auto;">
+- AMCEs</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">amce</span><span class="op">)</span></span></code></pre></div>
+<p><img src="visualize_files/figure-html/unnamed-chunk-8-1.png" width="1800" style="display: block; margin: auto;"></p>
+</details><hr>
+</div>
       </div>
       <div>
           <h2 id="conjoint-tool">How did researchers design conjoint surveys previously?</h2>
