@@ -54,7 +54,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>Read Your Qualtrics Data</h1>
+      <h1>Read and Wrangle Your Data</h1>
             
       
 
@@ -75,7 +75,7 @@ function to quickly read properly formatted Qualtrics files.</p>
 <div class="section level2">
 <h2 id="quick-workflow">🚀 Quick Workflow<a class="anchor" aria-label="anchor" href="#quick-workflow"></a>
 </h2>
-<details><summary><b>1. Export your survey responses from Qualtrics</b>
+<details style="margin-bottom: -5px"><summary><b>1. Export your survey responses from Qualtrics</b>
 </summary><p>When exporting from Qualtrics:</p>
 <ul>
 <li>Click <strong>“Download Data”</strong>.</li>
@@ -85,11 +85,11 @@ coded values.</li>
 </ul>
 ⚡ If you skip selecting “Use choice text,” your conjoint data may fail
 to load properly!
-</details><details><summary><b>2. Load essential packages</b>
+</details><details style="margin-bottom: -5px"><summary><b>2. Load essential packages</b>
 </summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://yhoriuchi.github.io/projoint/">projoint</a></span><span class="op">)</span></span></code></pre></div>
-</details><details><summary><b>3. Read your CSV file into R using <code>read_Qualtrics()</code></b>
+</details><details style="margin-bottom: -5px"><summary><b>3. Read your CSV file into R using <code>read_Qualtrics()</code></b>
 </summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Example: If your file is located in a "data" folder</span></span>
 <span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/read_Qualtrics.html">read_Qualtrics</a></span><span class="op">(</span><span class="st">"data/your_file.csv"</span><span class="op">)</span></span></code></pre></div>
@@ -131,7 +131,7 @@ function in <strong>projoint</strong> makes this easy.</p>
 <div class="section level2">
 <h2 id="quick-workflow">🚀 Quick Workflow<a class="anchor" aria-label="anchor" href="#quick-workflow"></a>
 </h2>
-<details>
+<details style="margin-bottom: -5px">
 <summary><b>1. Reshape Your Data</b>
 </summary><div class="section level3">
 <h3 id="example-flipped-repeated-task">Example (Flipped Repeated Task)<a class="anchor" aria-label="anchor" href="#example-flipped-repeated-task"></a>
@@ -165,7 +165,7 @@ last)</li>
 exists and is flipped</li>
 </ul>
 </details>
-<details>
+<details style="margin-bottom: -5px">
 <summary><b>2. Variations: Repeated vs. Non-Repeated</b>
 </summary><p><strong>Not-Flipped Repeated Task</strong></p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
@@ -186,7 +186,7 @@ exists and is flipped</li>
 <span>  .repeated <span class="op">=</span> <span class="cn">FALSE</span></span>
 <span><span class="op">)</span></span></code></pre></div>
 </details>
-<details>
+<details style="margin-bottom: -5px">
 <summary><b>3. The <code>.fill</code> Argument: Should You Use It?</b>
 </summary><p>Use <code>.fill = TRUE</code> to “fill” missing values based on IRR
 agreement.</p>
@@ -242,7 +242,7 @@ agreement.</p>
 - Use <code>.fill = FALSE</code> (default) when in doubt for safer
 estimates.</p>
 </details>
-<details>
+<details style="margin-bottom: -5px">
 <summary><b>4. What If Your Data Is Already Clean?</b>
 </summary><p>If you already have a clean dataset, use
 <code><a href="../reference/make_projoint_data.html">make_projoint_data()</a></code>:</p>
@@ -269,7 +269,7 @@ estimates.</p>
 <span><span class="co">## - data:     6400 rows, 13 columns</span></span>
 <span><span class="co">## - labels:   24 levels, 4 columns</span></span></code></pre>
 </details>
-<details>
+<details style="margin-bottom: -5px">
 <summary><b>5. Arranging Attribute and Level Labels</b>
 </summary><p>To reorder or relabel attributes:</p>
 <ol style="list-style-type: decimal">
